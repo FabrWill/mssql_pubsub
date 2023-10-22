@@ -1,9 +1,10 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { AuthService, LoginPayload, RegisterPayload } from './';
-import { CurrentUser } from './../common/decorator/current-user.decorator';
-import { User, UsersService } from './../user';
+import { AuthService, LoginPayload, RegisterPayload } from '../..';
+import { CurrentUser } from '../../../common/decorator/current-user.decorator';
+import { UsersService } from 'modules/user/domain/services/user.service';
+import { User } from 'modules/user/domain/entities/user.entity';
 
 @Controller('api/auth')
 @ApiTags('authentication')
